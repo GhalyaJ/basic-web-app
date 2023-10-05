@@ -12,6 +12,17 @@ export default function QueryProcessor(query: string): string {
     const numbers = [66, 32, 4];
     const largestNumber = Math.max(...numbers);
     return `The largest number among 66, 32, and 4 is ${largestNumber}.`;
+  } else if (query.toLowerCase().includes("plus")) {
+    // Extract the numbers from the query using regular expressions
+    const match = query.match(/(\d+)\s*plus\s*(\d+)/);
+    if (match && match.length === 3) {
+      const num1 = parseInt(match[1]);
+      const num2 = parseInt(match[2]);
+      const result = num1 + num2;
+      return `The result of ${num1} plus ${num2} is ${result}.`;
+    } else {
+      return "I couldn't understand the arithmetic expression.";
+    }
   }
   return "NO";
 }
