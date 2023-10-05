@@ -7,12 +7,11 @@ export default function QueryProcessor(query: string): string {
     );
   } else if (query.toLowerCase().includes("andrew")) {
     return "My Andrew ID is gjohar";
+  } else if (query.toLowerCase().includes("largest numbers")) {
+    // Add logic to find the largest number among 66, 32, and 4
+    const numbers = [66, 32, 4];
+    const largestNumber = Math.max(...numbers);
+    return `The largest number among 66, 32, and 4 is ${largestNumber}.`;
   }
-
-} else if (query.toLowerCase().includes("name")) {
-  return "My name is Ghalya & Fatima Johar";
-}
-
-
-  return "";
+  return "NO";
 }
